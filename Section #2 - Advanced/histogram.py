@@ -1,5 +1,5 @@
 #pylint:disable=no-member
-
+#Histogram allow us to visualize Pixel Distribution
 import cv2 as cv
 import matplotlib.pyplot as plt
 import numpy as np
