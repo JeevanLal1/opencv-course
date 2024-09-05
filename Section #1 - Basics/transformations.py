@@ -31,7 +31,8 @@ def rotate(img, angle, rotPoint=None):
     dimensions = (width,height)
 
     return cv.warpAffine(img, rotMat, dimensions)
-
+#-clockwise
+#+anticlockwise
 rotated = rotate(img, -45)
 cv.imshow('Rotated', rotated)
 
@@ -43,6 +44,9 @@ resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 cv.imshow('Resized', resized)
 
 # Flipping
+#0 implies flipping it vertically
+#1 implies flipping it horizontally
+#-1 implies filpping through both vertically and horizontally
 flip = cv.flip(img, -1)
 cv.imshow('Flip', flip)
 
