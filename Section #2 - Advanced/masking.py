@@ -1,5 +1,6 @@
 #pylint:disable=no-member
-
+#Masking allow us to Focus on Parts of Image
+#Mask Dimension shoul be same
 import cv2 as cv
 import numpy as np
 
