@@ -1,5 +1,4 @@
 #pylint:disable=no-member
-
 import cv2 as cv
 import numpy as np
 
@@ -15,13 +14,15 @@ cv.imshow('Gray', gray)
 blur = cv.GaussianBlur(gray, (5,5), cv.BORDER_DEFAULT)
 cv.imshow('Blur', blur)
 
-canny = cv.Canny(blur, 125, 175)
+canny = cv.Canny(blur, 125, 175) #detect edges
 cv.imshow('Canny Edges', canny)
-
-# ret, thresh = cv.threshold(gray, 125, 255, cv.THRESH_BINARY)
-# cv.imshow('Thresh', thresh)
-
-contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
+#threshold tries to binarize image meaning image pixel if less than 125 than it will set to  zero 
+#and above it set to 1
+ret, thresh = cv.threshold(gray, 125, 255, cv.THRESH_BINARY)
+cv.imshow('Thresh', thresh)
+#contours are basically boundary of object ,the line which connect continous points 
+#contours can be think as edges
+contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE) 
 print(f'{len(contours)} contour(s) found!')
 
 cv.drawContours(blank, contours, -1, (0,0,255), 1)
