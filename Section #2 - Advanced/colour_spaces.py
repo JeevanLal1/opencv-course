@@ -1,5 +1,6 @@
 #pylint:disable=no-member
-
+#Opencv uses BGR color space
+#Outside Opencv default Color Space is RGB
 import cv2 as cv
 import matplotlib.pyplot as plt
 
@@ -12,7 +13,7 @@ cv.imshow('Park', img)
 # BGR to Grayscale
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('Gray', gray)
-
+#can't convert grayscale to hsv ,to convert that we have to convert grayscale->bgr->hsv
 # BGR to HSV
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 cv.imshow('HSV', hsv)
