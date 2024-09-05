@@ -8,7 +8,7 @@ cv.imshow('Park', img)
 
 blank = np.zeros(img.shape[:2], dtype='uint8')
 
-b,g,r = cv.split(img)
+b,g,r = cv.split(img)#split into 3 different color channels which shows image in grayscale
 
 blue = cv.merge([b,blank,blank])
 green = cv.merge([blank,g,blank])
