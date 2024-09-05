@@ -23,7 +23,7 @@ cv.imshow('Bitwise OR', bitwise_or)
 bitwise_xor = cv.bitwise_xor(rectangle, circle)
 cv.imshow('Bitwise XOR', bitwise_xor)
 
-# bitwise NOT
+# bitwise NOT-->inversion
 bitwise_not = cv.bitwise_not(circle)
 cv.imshow('Circle NOT', bitwise_not)
 
