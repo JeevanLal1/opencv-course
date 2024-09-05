@@ -14,11 +14,11 @@ cv.imshow('Gray', gray)
 blur = cv.GaussianBlur(img, (7,7), cv.BORDER_DEFAULT)
 cv.imshow('Blur', blur)
 
-# Edge Cascade
+# Edge Cascade(Used in find Edges present in image) 
 canny = cv.Canny(blur, 125, 175)
 cv.imshow('Canny Edges', canny)
 
-# Dilating the image
+# Dilating the image(Changing the thickness )
 dilated = cv.dilate(canny, (7,7), iterations=3)
 cv.imshow('Dilated', dilated)
 
